@@ -45,6 +45,7 @@ game_active = True
 start_time = 0
 score = 0
 highscore = 0
+jump_sound = pygame.mixer.Sound('audio/jump.wav')
 
 bg_surface = pygame.image.load('graphics/background.png')
 
@@ -91,6 +92,7 @@ while True:         # lässt das Fenster dauerhaft laufen
                 if event.key == pygame.K_SPACE:
                     player_surface = player_jump
                     gravity = -7
+                    jump_sound.play()
             if event.type == pygame.KEYUP:
                 player_surface = player_fall
 
