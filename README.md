@@ -6,6 +6,6 @@ What do you need beforehand?
 
 How to use pygame:
 1. Go to your console / terminal
-2. Type: "pip install pygame" (pip should be isntalled)
+2. Type: "pip install pygame" 
 
 Ready to use :)
