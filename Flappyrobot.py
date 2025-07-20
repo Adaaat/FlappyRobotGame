@@ -40,10 +40,12 @@ pygame.init()
 screen = pygame.display.set_mode((1000,500))
 pygame.display.set_caption("Adnan's FlappyRobot")
 clock = pygame.time.Clock()
-test_font = pygame.font.Font(None, 60)
+test_font = pygame.font.Font('font/Minecraft.ttf',35)
 game_active = True
 start_time = 0
-score = display_score()
+score = 0
+highscore = 0
+jump_sound = pygame.mixer.Sound('audio/jump.wav')
 
 bg_surface = pygame.image.load('graphics/background.png')
 
@@ -90,6 +92,7 @@ while True:         # lässt das Fenster dauerhaft laufen
                 if event.key == pygame.K_SPACE:
                     player_surface = player_jump
                     gravity = -7
+                    jump_sound.play()
             if event.type == pygame.KEYUP:
                 player_surface = player_fall
 
@@ -121,9 +124,10 @@ while True:         # lässt das Fenster dauerhaft laufen
 
         game_active = collisions(player_rect,obstacle_rect_list)
 
-
+        if highscore <= 0:
+            highscore = 0
         score = display_score()
-        if (player_rect.top > 500) | (player_rect.top < -210):
+        if (player_rect.top > 500) |(player_rect.top < -210):
             game_active = False
 
     else:
@@ -136,6 +140,18 @@ while True:         # lässt das Fenster dauerhaft laufen
         screen.blit(lose_text,lose_rect)
         screen.blit(tap_text,tap_rect)
         display_endscore()
+        if highscore <= score:
+            highscore_message = test_font.render(f'New Highscore: {score} s',False,'Black')
+            highscore_rect = highscore_message.get_rect(bottomleft = ((0,500)))
+            screen.blit(highscore_message, highscore_rect)
+            highscore = score
+        else:
+            highscore_message = test_font.render(f'Highscore: {highscore} s',False,'Black')
+            highscore_rect = highscore_message.get_rect(bottomleft = ((0,500)))
+            screen.blit(highscore_message, highscore_rect)
+
+
+
 
 
 
@@ -149,18 +165,3 @@ while True:         # lässt das Fenster dauerhaft laufen
 
 
 
-'''
-  tube2_rect.x -= 2
-        if tube2_rect.x == -100: tube2_rect.x = 1000
-        screen.blit(tube2_surface,(tube2_rect))
-
-        tube_rect.x -= 2
-        if tube_rect.x == -100: tube_rect.x = 1000
-        screen.blit(tube_surface,(tube_rect))
-    
-      #    if player_rect.colliderect(tube_rect):
-     #       game_active = False
-  #      if player_rect.colliderect(tube2_rect):
-   #         game_active = False
-
-'''
