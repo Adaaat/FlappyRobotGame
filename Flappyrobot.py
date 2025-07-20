@@ -123,7 +123,7 @@ while True:         # lässt das Fenster dauerhaft laufen
 
 
         score = display_score()
-        if player_rect.top > 500:
+        if (player_rect.top > 500) | (player_rect.top < -210):
             game_active = False
 
     else:
