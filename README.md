@@ -1,11 +1,26 @@
-# PyGameFlappyRobot
+# Pygame Flappy Robot
+A simple Flappy Bird clone created as an early school project.
 
-What do you need beforehand?
-1. install python on your pc
-2. install an IDE for Python (e.g. Pycharm / Pycharm plugin on IntelliJ)
+> **Note:** This repository is archived. It was written using basic procedural Python without object-oriented programming (OOP) as an early learning exercise.
 
-How to use pygame:
-1. Go to your console / terminal
-2. Type: "pip install pygame" 
+## Requirements
 
-Ready to use :)
+- Python 3.x
+- `pygame`
+
+## Setup & Run
+
+1. Install dependencies:
+   ```bash
+   pip install pygame
+   ```
+
+2. Run the game:
+   ```bash
+   python Flappyrobot.py
+   ```
+
+## Controls
+
+- **Spacebar:** Jump
+- **Escape:** Quit game
