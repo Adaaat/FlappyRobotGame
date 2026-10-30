@@ -1,4 +1,5 @@
-# Pygame Flappy Robot
+# FlappyRobotGame
+
 A simple Flappy Bird clone created as an early school project.
 
 > **Note:** This repository is archived. It was written using basic procedural Python without object-oriented programming (OOP) as an early learning exercise.
@@ -16,11 +17,12 @@ A simple Flappy Bird clone created as an early school project.
    ```
 
 2. Run the game:
-   ```bash
-   python Flappyrobot.py
-   ```
+   - Double-click `Flappyrobot.py`
+   - Or run via terminal:
+     ```bash
+     py Flappyrobot.py
+     ```
 
 ## Controls
 
-- **Spacebar:** Jump
-- **Escape:** Quit game
+- **Spacebar / Left Click:** Jump
